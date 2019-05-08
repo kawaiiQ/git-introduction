@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-Hans-CN">
+  <head>
+    <title>Git及代码托管平台简明指南</title>
+    
+    <meta charset="utf-8" />
+    <meta name="description" content="一份关于如何使用Git和相关代码托管平台的简要说明。" />
+    <meta name="author" content="kwii" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="reveal.js/css/reset.css" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="reveal.js/lib/css/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>Git及代码托管平台简明指南</h1>
+            <p><small>一份关于Git和相关代码托管平台的基本使用说明 :-)</small></p>
+            <p><small><small>
+              基于<a href="https://revealjs.com">reveal.js</a>制作，使用空格或方向键切换，或上下滑动
+            </small></small></p>
+          </section>
+          <section>
+            <h2>Why Git?</h2>
+            <br/>
+          </section>
+          <section>
+            <h2>你是否……</h2>
+            <img src="pic/1.gif" alt="boom"/>
+            <p><small>牵一发，泰山崩于前，改不回去</small></p>
+          </section>
+          <section>
+            <h2>你是否……</h2>
+            <img src="pic/2.gif" alt="boom"/>
+            <p><small>开发模块，写出几团乱麻，拼不起来</small></p>
+          </section>
+          <section>
+            <h2>你是否……</h2>
+            <img src="pic/3.jpg" style="width:30%" alt="boom"/>
+            <p><small>分工合作，一盘散沙</small></p>
+          </section>
+          <section>
+            <h3>That's why you need git !</h3>
+          </section>
+          <section>
+            <h2>Git是……</h2>
+            <ul>
+              <li>免费开源的分布式版本控制软件</li>
+              <li>追踪&amp;控制文件变化</li>
+            </ul>
+          </section>
+          <section>
+            <h2>如何安装？</h2>
+          </section>
+          <section>
+            <h3>For Windows</h3>
+            <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>
+          </section>
+          <section>
+            <h3>For macOS</h3>
+            <a href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a>
+          </section>
+          <section>
+            <h3>For Linux</h3>
+            <p>可使用各发行版的包管理工具一键安装:-)</p>
+            <small>
+              <code>pacman -S git</code>
+              <br />
+              <code>apt-get install git</code>
+              <br />
+              <code>yum install git</code>
+              <br />
+              <code>......</code>
+            </small>
+          </section>
+          <section>
+            <h2>Git使用指南</h2>
+            <p class="fragment"><small>以下命令请在命令行或终端执行 :-)</small></p>
+          </section>
+          <section>
+            <h3>使用前的一些设置</h3>
+            <p><small>为了区分每个人对代码的贡献，Git需要知道你是谁</small></p>
+            <pre style="width:550px"><code># 设置你的名字</code><code>git config --global user.name "你的名字"</code><code># 设置你的邮箱</code><code>git config --global user.email "你的邮箱"</code></pre>
+          </section>
+          <section>
+            <h2>从仓库开始</h2>
+            <p><small>一个项目只有建立了仓库才能使用Git的相关功能。</small></p>
+            <p><small>建立仓库后，仓库内的所有文件都将被Git追踪。</small></p>
+            <p class="fragment fade"><small>我们先从本地仓库开始 :-)</small></p>
+          </section>
+          <section>
+            <h3>在当前目录创建仓库</h3>
+            <pre style="width:200px"><code>git init</code></pre>
+            <p><small>执行后，目录内会多出一个<code>.git</code>文件夹，这是仓库的文件，<b>不要修改它</b></small></p>
+          </section>
+          <section>
+            <h3>克隆一个已有的仓库</h3>
+            <p><small>也可以复制一个已有的仓库，新仓库保留原仓库的所有文件和记录</small></p>
+            <pre style="width:370px"><code>git clone /path/to/repo</code></pre>
+          </section>
+          <section>
+            <h2>工作流</h2>
+            <p>仓库内容由三部分构成：</p>
+            <ul style="font-size:30px">
+              <li>工作目录：目录内的实际文件</li>
+              <li>暂存区：已缓存的内容改动</li>
+              <li>版本库：每次提交时项目的快照</li>
+            </ul>
+          </section>
+          <section>
+            <p><small>增删或修改文件后，先将文件添加到暂存区，再提交至版本库</small></p>
+            <img style="width:60%" src="pic/4.jpg" alt="work flow"/>
+          </section>
+          <section>
+            <p><small>文件被修改，Git能够自动发现文件的变化</small></p>
+            <p><small>查看当前仓库的状态：</small></p>
+            <pre style="width:150px"><code>git status</code></pre>
+          </section>
+          <section>
+            <p><small>仓库内增删或修改文件之后，可以将其添加到暂存区：</small></p>
+            <pre style="width:190px"><code>git add 文件名</code></pre>
+            <p class="fragment"><small>这样，文件的当前版本就被备份到了暂存区</small></p>
+          </section>
+          <section>
+            <p><small>如果想一次性暂存所有文件，也可以一行完成 :-)</small></p>
+            <pre style="width:180px"><code>git add -A</code></pre>
+          </section>
+          <section>
+            <p><small>如此，当操作失误文件被改得面目全非，就可以恢复：</small></p>
+            <pre style="width:260px"><code>git checkout 文件名</code></pre>
+            <div class="fragment">
+              <p><small>这会从暂存区的备份中恢复你的文件</small></p>
+              <p><small>如果暂存区中没有，则会从版本库最后一次提交中恢复文件</small></p>
+            </div>
+          </section>
+          <section>
+            <p><small>如果整个项目被改成了一团乱麻 :-(，可以回退到最后一次提交的状态：</small></p>
+            <pre style="width:310px"><code>git reset --hard HEAD</code></pre>
+            <p><small>所有修改将被重置，新文件不会被删除，而是回到未追踪的状态</small></p>
+            <p class="fragment"><small>使用需慎重：从最后一次提交之后的所有修改都将被<b style="color:red">清除</b>!</small></p>
+          </section>
+          <section>
+            <p><small>当阶段性工作完成，就可以将暂存区的所有改动提交至版本库，形成新版本：</small></p>
+            <pre style="width:400px"><code>git commit -m "这次都改了些啥"</code></pre>
+            <div class="fragment">
+              <p><small>查看历史提交记录：</small></p>
+              <pre style="width:110px"><code>git log</code></pre>
+            </div>
+          </section>
+          <section>
+            <h2>分支管理</h2>
+            <p><small>Git不只是代码备份工具，通过版本的分支控制，</small></p>
+            <p><small>还可以很好地支持开发的并行推进</small></p>
+            <img style="width:50%" src="pic/5.jpg" alt="branch"/>
+          </section>
+          <section>
+            <h3>创建一个分支</h3>
+            <p><small>假设你要为项目开发一个新功能，或要修复一个BUG，
+            <br/>但你不希望因此影响项目主体的推进，
+            <br/>那么，你可以为新功能的开发创建一个新的分支：</small></p>
+            <pre style="width:260px"><code>git branch 新分支名</code></pre>
+            <div class="fragment">
+              <p><small>这样，你就从当前版本创建了一个新的分支，接下来，切换到新分支：</small></p>
+              <pre style="width:270px"><code>git checkout 分支名</code></pre>
+            </div>
+            <p class="fragment"><small>新分支上的所有修改都不会影响原分支，请放心开发 :-)</small></p>
+          </section>
+          <section>
+            <h3>切换分支</h3>
+            <p><small>查看仓库内所有分支以及当前分支：</small></p>
+            <pre style="width:150px"><code>git branch</code></pre>
+            <p style="margin-top:60px"><small>分支的切换可以使用如下命令：</small></p>
+            <pre style="width:270px"><code>git checkout 分支名</code></pre>
+            <p class="fragment"><small>仓库初始化时的默认分支是 <code>master</code>，通常作为项目的主分支</small></p>
+            <p class="fragment"><small>切换分支前请先提交保存当前分支的修改，既然决定离开，就不要再挂念~</small></p>
+          </section>
+          <section>
+            <h3>合并分支</h3>
+            <p><small>当新特性开发完成后，就可以将其合并入主分支了</small></p>
+            <p><small>要合并分支，请在提交修改后，执行：</small></p>
+            <pre style="width:250px"><code>git merge 其他分支</code></pre>
+            <p class="fragment"><small>这会将其他分支的修改合并到当前分支下</small></p>
+            <p class="fragment"><small>要将修改合并入主分支，切换到主分支下，执行该命令即可</small></p>
+          </section>
+          <section>
+            <p><small>合并分支时，Git会自动尝试合并改动，</small></p>
+            <p><small>但总有些时候，有些冲突并不能自动解决，</small></p>
+            <p><small>此时，你会收到提示，</small></p>
+            <p><small>在手动解决冲突后，添加改动到暂存区并提交合并后的新版本即可</small></p>
+          </section>
+          <section>
+            <h3>怎样利用分支功能</h3>
+            <p><small>一种使用套路是开发新功能时建立新分支，完成后合并入主分支</small></p>
+            <p class="fragment"><small>还有一种套路是设立latest分支对应最新的开发进度，<br />确保无误后再合并入更稳定的主分支</small></p>
+            <p class="fragment"><small>
+              还可以为不同的开发者设立不同的分支，每人负责自己的分支，由管理员负责合并<br />
+              （这种方式在代码托管平台上有更好的机制解决）
+            </small></p>
+            <p class="fragment"><small>……</small></p>
+          </section>
+          <section>
+            <p><small>当一个分支的使命完成之后，可以删除它：</small></p>
+            <pre style="width:280px"><code>git branch -b 分支名</code></pre>
+          </section>
+          <section>
+            <h2>远程仓库</h2>
+            <p><small>Git是一个分布式版本控制软件，每个本地仓库都可以与多个远程仓库保持同步</small></p>
+            <p><small>本地仓库是远程仓库的完整镜像，可以独立存在，可以任意指定远程仓库</small></p>
+            <img style="width:70%" src="pic/6.jpg" alt="remote repo"/>
+          </section>
+          <section>
+            <h3>使用远程仓库前的准备工作</h3>
+            <p><small><small>（如果你的远程仓库是基于HTTPS的，可略过此步）</small></small></p>
+            <p><small>通常，Git使用SSH与远程服务器进行通信，<br />这需要你的电脑生成一对SSH key用于加密通信：</small></p>
+            <pre style="width:500px"><code>ssh-keygen -t rsa -C "你的名字或邮箱"</code></pre>
+            <div class="fragment">
+              <p><small>
+                这会在你的用户目录里生成一个.ssh的文件夹，里面有一个公钥和一个私钥<br />
+                将公钥（id_rsa.pub中的内容）添加到远程服务器中<br />
+                （如果你使用了代码托管平台，将其添加到你的个人账号的SSH key中）
+              </small></p>
+            </div>
+          </section>
+          <section>
+            <h3>克隆远程仓库…</h3>
+            <p><small>同克隆本地仓库一样，只不过地址是远程地址</small></p>
+            <pre style="width:550px"><code># 克隆基于SSH的仓库（需要SSH Key）</code><code>git clone user@host.com:path/to/repo.git</code><code># 克隆基于HTTPS的仓库</code><code>git clone https://host.com/path/to/repo.git</code></pre>
+          </section>
+          <section>
+            <h3>或者在已有仓库添加远程仓库的关联</h3>
+            <pre style="width:550px"><code>git add remote 远程仓库名 远程仓库地址</code></pre>
+          </section>
+          <section>
+            <h3>远程仓库名</h3>
+            <p><small>对于直接克隆的远程仓库，默认的仓库名为origin</small></p>
+            <p><small>如果是手动添加的远程仓库，则可以任意指定仓库名</small></p>
+          </section>
+          <section>
+            <h3>与远程仓库保持同步</h3>
+            <p><small>从远程仓库抓取最新内容：</small></p>
+            <pre style="width:550px"><code>git pull 远程仓库名 分支名</code></pre>
+            <p><small>与合并分支一样，同样可能需要手动处理内容冲突</small></p>
+          </section>
+          <section>
+            <h3>将提交同步至远程仓库</h3>
+            <p><small>提交自己的工作到本地仓库后，可将修改推送到远程仓库：</small></p>
+            <pre style="width:550px"><code>git push 远程仓库名 分支名</code></pre>
+            <p class="fragment"><small>只有推送到远程仓库的分支才对别人可见</small></p>
+            <div class="fragment">
+              <p><small>
+                另外，推送时本地仓库的提交可能与远程仓库不一致，导致推送失败<br/>
+                例如远程仓库有本地仓库未抓取的更新版本的提交，<br/>
+                因此建议在推送之前先抓取最新内容，确保最新后再提交
+              </small></p>
+              <p><small><small>（另有强制推送办法，但强烈不推荐，因为会破坏远程仓库）</small></small></p>
+            </div>
+          </section>
+          <section>
+            <h2>忽略文件</h2>
+            <p><small>有时我们不希望将工作目录内的一些文件纳入仓库，例如临时文件等</small></p>
+            <p><small>那么，可以在工作目录的根目录添加一个<code>.gitignore</code>文件，告诉Git要忽略哪些文件</small></p>
+            <p><small>将希望忽略的文件和目录的相对位置加入.gitignore即可，一行一个，支持通配符<code>*</code></small></p>
+            <p><small>如果文件和目录尚未在版本库和暂存区内出现过，则Git将不再追踪这些文件</small></p>
+          </section>
+          <section>
+            <h2>复习一下：</h2>
+            <ul style="font-size:30px">
+              <li>使用<code>init</code>或<code>clone</code>创建仓库或从本地或远程仓库克隆</li>
+              <li>使用<code>add</code>添加文件到暂存区，使用<code>commit</code>提交</li>
+              <li>使用<code>branch</code>创建分支，使用<code>checkout</code>切换分支</li>
+              <li>使用<code>remote add</code>添加与远程仓库的关联</li>
+              <li>使用<code>pull</code>获取远程仓库最新内容，使用<code>push</code>提交本地最新内容</li>
+              <li>编写<code>.gitignore</code>忽略不想要包含进仓库的文件</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        transition: 'slide',
+        dependencies: [
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true },
+          { src: 'reveal.js/plugin/search/search.js', async: true },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
