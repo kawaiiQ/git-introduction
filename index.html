@@ -28,6 +28,11 @@
             </small></small></p>
           </section>
           <section>
+            <small>
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
+            </small>
+          </section>
+          <section>
             <h2>Why Git?</h2>
             <br/>
           </section>
@@ -155,6 +160,13 @@
             </div>
           </section>
           <section>
+            <h2>忽略文件</h2>
+            <p><small>有时我们不希望将工作目录内的一些文件纳入仓库，例如临时文件等</small></p>
+            <p><small>那么，可以在工作目录的根目录添加一个<code>.gitignore</code>文件，告诉Git要忽略哪些文件</small></p>
+            <p><small>将希望忽略的文件和目录的相对位置加入.gitignore即可，一行一个，支持通配符<code>*</code></small></p>
+            <p><small>如果文件和目录尚未在版本库和暂存区内出现过，则Git将不再追踪这些文件</small></p>
+          </section>
+          <section>
             <h2>分支管理</h2>
             <p><small>Git不只是代码备份工具，通过版本的分支控制，</small></p>
             <p><small>还可以很好地支持开发的并行推进</small></p>
@@ -179,7 +191,7 @@
             <p style="margin-top:60px"><small>分支的切换可以使用如下命令：</small></p>
             <pre style="width:270px"><code>git checkout 分支名</code></pre>
             <p class="fragment"><small>仓库初始化时的默认分支是 <code>master</code>，通常作为项目的主分支</small></p>
-            <p class="fragment"><small>切换分支前请先提交保存当前分支的修改，既然决定离开，就不要再挂念~</small></p>
+            <p class="fragment"><small>切换分支前请先提交保存当前分支的修改</small></p>
           </section>
           <section>
             <h3>合并分支</h3>
@@ -263,27 +275,350 @@
             </div>
           </section>
           <section>
-            <h2>忽略文件</h2>
-            <p><small>有时我们不希望将工作目录内的一些文件纳入仓库，例如临时文件等</small></p>
-            <p><small>那么，可以在工作目录的根目录添加一个<code>.gitignore</code>文件，告诉Git要忽略哪些文件</small></p>
-            <p><small>将希望忽略的文件和目录的相对位置加入.gitignore即可，一行一个，支持通配符<code>*</code></small></p>
-            <p><small>如果文件和目录尚未在版本库和暂存区内出现过，则Git将不再追踪这些文件</small></p>
-          </section>
-          <section>
             <h2>复习一下：</h2>
             <ul style="font-size:30px">
               <li>使用<code>init</code>或<code>clone</code>创建仓库或从本地或远程仓库克隆</li>
               <li>使用<code>add</code>添加文件到暂存区，使用<code>commit</code>提交</li>
+              <li>编写<code>.gitignore</code>忽略不想要包含进仓库的文件</li>
               <li>使用<code>branch</code>创建分支，使用<code>checkout</code>切换分支</li>
               <li>使用<code>remote add</code>添加与远程仓库的关联</li>
               <li>使用<code>pull</code>获取远程仓库最新内容，使用<code>push</code>提交本地最新内容</li>
-              <li>编写<code>.gitignore</code>忽略不想要包含进仓库的文件</li>
             </ul>
+          </section>
+          <section>
+            <h2>那么，去哪里搞远程仓库呢？</h2>
+          </section>
+          <section>
+            <h3>你可以……</h3>
+            <p><small>敏感项目或局域网环境，你可以<a href="https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git">架设Git服务器</a></small></p>
+          </section>
+          <section>
+            <p><small>其他情况，你可以考虑使用：</small></p>
+            <h3>代码托管平台</h3>
+          </section>
+          <section>
+            <h4>在代码托管平台上，你可以……</h4>
+            <ul style="font-size:30px">
+              <li>使用远程仓库</li>
+              <li>优雅地进行协作</li>
+              <li>维护软件的发行版</li>
+              <li>提供软件的文档</li>
+              <li>分享代码，听取反馈</li>
+              <li>查找优秀项目</li>
+            </ul>
+          </section>
+          <section>
+            <h4>在代码托管平台上，你还可以……</h4>
+            <ul style="font-size:30px">
+              <li>参与开源项目</li>
+              <li>搭建个人网站</li>
+              <li>备份资料</li>
+              <li>用作论坛</li>
+              <li>Star多了可以找工作</li>
+              <li>……</li>
+            </ul>
+            <p><small><small>改页内容超纲，请自行学习 :-)</small></small></p>
+          </section>
+          <section>
+            <h4>有哪些靠谱的代码托管平台？</h4>
+            <ul style="font-size:30px">
+              <li><a href="https://github.com/">GitHub</a></li>
+              <li><a href="https://bitbucket.org/">Bitbucket</a></li>
+              <li><a href="https://gitee.com/">码云</a></li>
+              <li><a href="https://coding.net/">CODING</a></li>
+              <li><a href="https://dev.tencent.com">腾讯开发者平台</a></li>
+            </ul>
+          </section>
+          <section>
+            <h4>主要功能点有：</h4>
+            <ul style="font-size:30px">
+              <li>Git仓库</li>
+              <li>Release</li>
+              <li>Watch &amp; Star &amp; Fork</li>
+              <li>Pull Request</li>
+              <li>Issue</li>
+              <li>Wiki</li>
+            </ul>
+            <p><small>下面将以Github为例</small></p>
+          </section>
+          <section>
+            <h3>使用前的准备工作</h3>
+            <p><small>通常，这些平台的远程仓库有两种同步方法：</small></p>
+            <ul style="font-size:30px">
+              <li>基于HTTPS，可以随意pull，每次push需要输入用户名和密码</li>
+              <li>基于SSH，需要提供公钥，否则无法同步</li>
+            </ul>
+          </section>
+          <section>
+            <p><small>如果选择SSH方式，请按照前面章节的方法生成SSH Key，并将公钥添加到你在代码托管平台的个人账户里，通常，这在你的个人设置里面可以找到</small></p>
+            <img src="pic/7.jpg" alt="create ssh key" />
+            <p><small>Title随便写，Key是你的公钥</small></p>
+            <p><small>这个公钥将被用来确认你的身份</small></p>
+          </section>
+          <section>
+            <h3>使用代码托管平台的Git仓库</h3>
+            <p><small>打开一个项目，你可以随意浏览代码</small></p>
+            <img src="pic/8.png" alt="clone & download" />
+          </section>
+          <section>
+            <p><small>你可以随意切换分支</small></p>
+            <img src="pic/9.png" alt="browse code" />
+          </section>
+          <section>
+            <p><small>还可以查看当前分支下的各次提交的版本</small></p>
+            <img src="pic/10.png" alt="browse code" />
+          </section>
+          <section>
+            <p><small>你可以在“Clone or download”之类的地方找到项目的地址</small></p>
+            <p><small>HTTPS和SSH的地址都有，这个地址可以用于远程仓库的操作</small></p>
+            <p><small>你还可以打包下载当前版本的代码文件</small></p>
+            <img src="pic/11.png" alt="clone & download" />
+          </section>
+          <section>
+            <h3>Release</h3>
+            <p><small>阶段性开发完成，想要发布正式版？</small></p>
+            <p><small>想要方便大众，发布可直接运行的软件？</small></p>
+            <div class="fragment">
+              <p><small>去Releases里发布一下吧</small></p>
+              <img src="pic/19.png" alt="create release" />
+            </div>
+            <p class="fragment"><small>（当然，你也可以去别人的项目里做个伸手党 →_→）</small></p>
+          </section>
+          <section>
+            <h3>Watch</h3>
+            <p><small>随时关注项目的最新动态</small></p>
+            <img src="pic/12.png" alt="watch" />
+          </section>
+          <section>
+            <h3>Star</h3>
+            <p><small>喜欢的话，点个赞再走 :-)</small></p>
+            <img src="pic/13.png" alt="star" />
+          </section>
+          <section>
+            <h3>Push的权限</h3>
+            <p><small>你可以Push的仓库有：</small></p>
+            <ul style="font-size:30px">
+              <li>你自己账户下仓库</li>
+              <li>持有者将你设为Collaborator的仓库</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Fork</h3>
+            <p><small>想要修改别人的项目却无权Push？Fork一份到自己的账号下</small></p>
+            <img src="pic/13.png" alt="fork" />
+            <div class="fragment">
+              <p><small>Fork后，仓库将会被克隆一份到你的账户下</small></p>
+              <img src="pic/14.png" alt="fork result" />
+            </div>
+          </section>
+          <section>
+            <h3>Pull Request</h3>
+            <p><small>给Fork的项目加了个新功能，想要回馈原项目？</small></p>
+            <div class="fragment">
+              <p>发起Pull Request !</p>
+              <img src="pic/15.png" alt="pull request" />
+            </div>
+          </section>
+          <section>
+            <p>开发者同意并合并代码后，<br />你的代码将贡献给原项目 (๑•̀ㅂ•́)و✧</p>
+          </section>
+          <section>
+            <h3>Pull Request工作流</h3>
+            <p><small>这也是在代码托管平台上合作开发的常见模式</small></p>
+            <img src="pic/16.png" alt="pull request workflow" />
+          </section>
+          <section>
+            <h3>Wiki</h3>
+            <p><small>对代码 &amp; 功能有疑问？想看看文档？</small></p>
+            <div class="fragment">
+              <p>去Wiki里看看吧</p>
+              <img src="pic/20.png" alt="issues" />
+            </div>
+          </section>
+          <section>
+            <h3>Issue</h3>
+            <p><small>看了，还是有疑问？</small></p>
+            <p><small>开发者很懒，什么都没留下？</small></p>
+            <div class="fragment">
+              <p>去Issues里看看吧</p>
+              <img src="pic/18.png" alt="issues" style="width:50%" />
+              <p><small>Issues里包含了大家对于项目的疑问，或者对于Bug的反馈</small></p>
+            </div>
+          </section>
+          <section>
+            <p>没有看到自己遇到的问题？</p>
+            <div class="fragment">
+              <p>提交一个Issue吧</p>
+              <img src="pic/17.png" alt="new issue" />
+            </div>
+          </section>
+          <section>
+            <h3>如何找到一份靠谱的项目？</h3>
+          </section>
+          <section>
+            <h3>一份好项目的特征：</h3>
+            <ul style="font-size:30px">
+              <li>很多star，说明很多人喜欢</li>
+              <li>很多fork，说明很多人都在研究</li>
+              <li>很多issue，说明社区十分活跃</li>
+            </ul>
+          </section>
+          <section>
+            <h3>总结一下</h3>
+            <ul style="font-size: 30px">
+              <li>使用代码托管平台提供的远程仓库</li>
+              <li>使用Release发布软件</li>
+              <li>使用Watch关注软件</li>
+              <li>使用Star表示你的喜爱</li>
+              <li>使用Fork & Pull Request为项目作贡献</li>
+              <li>使用Wiki编写文档</li>
+              <li>使用Issue和开发者及用户交流</li>
+            </ul>
+          </section>
+          <section>
+            <h2>还有一件事<span class="fragment">：遵守开源协议</span></h2>
+            <div class="fragment">
+              <p>开源 ≠ 拿来随便用</p>
+              <p><small>想集成或修改源码，你需要遵守开发者的规则</small></p>
+            </div>
+            <p class="fragment"><small>通常，开源协议位于项目根目录的LICENCE文件中</small></p>
+          </section>
+          <section>
+            <h3>那么，需要遵守些什么呢？</h3>
+            <p><small><small>以下内容总结于<a href="http://choosealicense.online/">选择一个开源软件协议</a></small></small></p>
+          </section>
+          <section>
+            <h3 style="color: greenyellow">通常，你可以……</h3>
+            <ul style="font-size: 30px; color: greenyellow">
+              <li>商用：你可以将软件和衍生产品用于商用</li>
+              <li>分发：你可以分发该软件</li>
+              <li>修改：你可以修改软件或源代码</li>
+              <li>私用：自己拿来用</li>
+            </ul>
+          </section>
+          <section>
+            <h3 style="color: deepskyblue">通常，你需要……</h3>
+            <ul style="font-size: 30px; color: deepskyblue">
+              <li>版权说明：你明确地放置许可协议和版权信息</li>
+            </ul>
+            <p style="color:grey"><small><small>（有极个别特殊协议无需版权说明）</small></small></p>
+          </section>
+          <section>
+            <h3 style="color: orangered">通常，你不可以……</h3>
+            <ul style="font-size: 30px; color: orangered">
+              <li>追责：遇到任何问题，原作者不承担任何责任</li>
+            </ul>
+          </section>
+          <section>
+            <h3>这些事项依协议而各异：</h3>
+            <ul style="font-size: 30px">
+              <li>专利授权：你可否对修改内容申请专利</li>
+              <li>公开源码：你是否需要公开自己的全部源代码</li>
+              <li>相同协议：你的软件是否需要使用与原软件相同的协议进行发布</li>
+              <li>声明变更：你是否需要提供文档说明你对原软件的修改之处</li>
+              <li>使用商标：你是否可以使用原软件的商标（通常不能，即便没有说明）</li>
+            </ul>
+          </section>
+          <section>
+            <h3>常见协议</h3>
+            <ul style="font-size: 30px">
+              <li><a href="http://choosealicense.online/licenses/mit/">MIT License</a></li>
+              <li><a href="http://choosealicense.online/licenses/gpl-3.0/">GNU GPLv3</a></li>
+              <li><a href="http://choosealicense.online/licenses/apache-2.0/">Apache License 2.0</a></li>
+              <li><a href="http://choosealicense.online/licenses/unlicense/">The Unlicense</a></li>
+            </ul>
+            <p><small>更多开源协议，参见<a href="http://choosealicense.online/appendix/">附录 - Choose a License</a></small></p>
+          </section>
+          <section>
+            <h4><a href="http://choosealicense.online/licenses/mit/">MIT License</a></h4>
+            <p><small>简短而宽松的协议，只提供了版权保护和声明，<br />你只需要在自己的软件中放置一份原作的LICENSE即可</small></p>
+            <ul style="font-size: 25px">
+              <li style="color: greenyellow">你可以：商用、分发、修改、私用</li>
+              <li style="color: deepskyblue">你需要：版权说明，放置原作版权说明</li>
+              <li style="color: orangered">你不能：追责</li>
+            </ul>
+          </section>
+          <section>
+            <h4><a href="http://choosealicense.online/licenses/gpl-3.0/">GNU GPLv3</a></h4>
+            <p><small>GPL传染：当你的软件中使用了任何GPL软件的模块，<br />那么你必须同样基于GPL协议开源。</small></p>
+            <ul style="font-size: 25px">
+              <li style="color: greenyellow">你可以：商用、分发、修改、私用、专利授权</li>
+              <li style="color: deepskyblue">你需要：公开源码、版权说明、相同协议、声明变更</li>
+              <li style="color: orangered">你不能：追责</li>
+            </ul>
+          </section>
+          <section>
+            <h4>升级版1：<a href="http://choosealicense.online/licenses/agpl-3.0/">GNU AGPLv3</a></h4>
+            <p><small>
+              在GPL协议的基础上弥补了GPL关于软件分发在网络方面的漏洞，<br />
+              AGPL协议添加了网络分发的要求，<br />
+              规定用户必须可以获取软件源代码，从而避免以网络服务的形式规避开源。</small></p>
+            <ul style="font-size: 25px">
+              <li style="color: greenyellow">你可以：商用、分发、修改、私用、专利授权</li>
+              <li style="color: deepskyblue">你需要：公开源码、版权说明、相同协议、网络分发、声明变更</li>
+              <li style="color: orangered">你不能：追责</li>
+            </ul>
+          </section>
+          <section>
+            <h4>升级版2：<a href="http://choosealicense.online/licenses/lgpl-3.0/">GNU LGPLv3</a></h4>
+            <p><small>
+              宽松版的GPL协议<br />
+              GPL要求只要包含GPL软件即需公开源码，<br />
+              LGPL则将要求放宽，只有对原软件修改或二次开发才需要公开源码，<br />
+              如果只是连接和调用LGPL的软件，则无需公开
+            </small></p>
+            <ul style="font-size: 25px">
+              <li style="color: greenyellow">你可以：商用、分发、修改、私用、专利授权</li>
+              <li style="color: deepskyblue">你需要：公开源码、版权说明、相同协议、声明变更</li>
+              <li style="color: orangered">你不能：追责</li>
+            </ul>
+          </section>
+          <section>
+            <h4><a href="http://choosealicense.online/licenses/apache-2.0/">Apache License</a></h4>
+            <p><small>一份提供了版权保护和许可声明的宽松的协议，本协议授权使用者专利使用权，使用时需注明作者，如有修改，需注明修改部分内容。请注意，本协议不授予商标使用权</small></p>
+            <ul style="font-size: 25px">
+              <li style="color: greenyellow">你可以：商用、分发、修改、私用、专利授权</li>
+              <li style="color: deepskyblue">你需要：版权说明、声明变更</li>
+              <li style="color: orangered">你不能：追责、使用商标</li>
+            </ul>
+          </section>
+          <section>
+            <h4><a href="http://choosealicense.online/licenses/unlicense//">The Unlicense</a></h4>
+            <p><small>没有任何附加要求，作品可以在不同的条件下无需源码地分发。</small></p>
+            <ul style="font-size: 25px">
+              <li style="color: greenyellow">你可以：商用、分发、修改、私用</li>
+              <li style="color: orangered">你不能：追责</li>
+            </ul>
+          </section>
+          <section>
+            <h3>小心那些没有提供协议的项目！</h3>
+            <p><small>
+              没有许可证，将默认使用版权保护法，<br />
+              这意味着保留所有权力，不允许任何人复制，分发或创建衍生作品
+            </small></p>
+          </section>
+          <section>
+            <p>以上就是Git和代码托管平台的基本使用方法了</p>
+            <p>使用愉快 :-)</p>
+          </section>
+          <section>
+            <h2>一些推荐的资料</h2>
+            <ul style="font-size: 30px">
+              <li><a href="http://rogerdudler.github.io/git-guide/index.zh.html">git - 简明指南</a></li>
+              <li><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git</a></li>
+              <li><a href="https://gitee.com/progit/">Pro Git</a></li>
+              <li><a href="https://help.github.com/en">GitHub Help</a></li>
+            </ul>
+          </section>
+          <section>
+            <p>本作品GitHub地址</p>
+            <a href="https://github.com/kawaiiq/git-introduction">https://github.com/kawaiiq/git-introduction</a>
+            <p><small>使用<a href="https://pages.github.com/">Github Pages</a>（IPv6）和<a href="https://coding.net/pages/">Coding Pages</a>（IPv4）发布</small></p>
+            <p>欢迎Star &amp; Fork :-)</p>
           </section>
         </section>
       </div>
     </div>
-
     <script src="reveal.js/js/reveal.js"></script>
     <script>
       Reveal.initialize({
