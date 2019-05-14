@@ -22,17 +22,19 @@
         <section>
           <section>
             <h1>Git及代码托管平台简明指南</h1>
-            <p><small>一份关于Git和相关代码托管平台的基本使用说明 :-)</small></p>
             <p><small><small>
               基于<a href="https://revealjs.com">reveal.js</a>制作，使用空格或方向键切换，或上下滑动
             </small></small></p>
           </section>
           <section>
             <small>
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+              </a><br />
+              本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。
             </small>
           </section>
-          <section>
+          <section data-transition="slide">
             <h2>Why Git?</h2>
             <br/>
           </section>
@@ -54,7 +56,7 @@
           <section>
             <h3>That's why you need git !</h3>
           </section>
-          <section>
+          <section data-background="#F74E27" data-background-transition="slide">
             <h2>Git是……</h2>
             <ul>
               <li>免费开源的分布式版本控制软件</li>
@@ -110,7 +112,7 @@
             <p><small>也可以复制一个已有的仓库，新仓库保留原仓库的所有文件和记录</small></p>
             <pre style="width:370px"><code>git clone /path/to/repo</code></pre>
           </section>
-          <section>
+          <section data-background="black">
             <h2>工作流</h2>
             <p>仓库内容由三部分构成：</p>
             <ul style="font-size:30px">
@@ -119,7 +121,7 @@
               <li>版本库：每次提交时项目的快照</li>
             </ul>
           </section>
-          <section>
+          <section data-background="black">
             <p><small>增删或修改文件后，先将文件添加到暂存区，再提交至版本库</small></p>
             <img style="width:60%" src="pic/4.jpg" alt="work flow"/>
           </section>
@@ -166,7 +168,7 @@
             <p><small>将希望忽略的文件和目录的相对位置加入.gitignore即可，一行一个，支持通配符<code>*</code></small></p>
             <p><small>如果文件和目录尚未在版本库和暂存区内出现过，则Git将不再追踪这些文件</small></p>
           </section>
-          <section>
+          <section data-background="black">
             <h2>分支管理</h2>
             <p><small>Git不只是代码备份工具，通过版本的分支控制，</small></p>
             <p><small>还可以很好地支持开发的并行推进</small></p>
@@ -221,7 +223,7 @@
             <p><small>当一个分支的使命完成之后，可以删除它：</small></p>
             <pre style="width:280px"><code>git branch -b 分支名</code></pre>
           </section>
-          <section>
+          <section data-background="black">
             <h2>远程仓库</h2>
             <p><small>Git是一个分布式版本控制软件，每个本地仓库都可以与多个远程仓库保持同步</small></p>
             <p><small>本地仓库是远程仓库的完整镜像，可以独立存在，可以任意指定远程仓库</small></p>
@@ -274,7 +276,7 @@
               <p><small><small>（另有强制推送办法，但强烈不推荐，因为会破坏远程仓库）</small></small></p>
             </div>
           </section>
-          <section>
+          <section data-background="black">
             <h2>复习一下：</h2>
             <ul style="font-size:30px">
               <li>使用<code>init</code>或<code>clone</code>创建仓库或从本地或远程仓库克隆</li>
